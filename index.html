@@ -118,21 +118,27 @@ $ jison ./src/cssparser.y ./src/css.l
 
 <h2>JSON Structure</h2>
 
-<p>There's three level of JSON structure for CSS.</p>
+<p>There are 3 types of JSON format.</p>
 
 <ul>
-<li>simple - most simple. this's simply consist of just key &amp; value.</li>
-<li>deep - more detailed then simple mode. this has more informations of selector, terms, expression, queries, …</li>
-<li>atomic - most detailed. 'atomic' JSON has all pieces of each key &amp; values in CSS. e.g. length has numeric value &amp; its unit like "100px" -&gt; { "value": 100, "unit": "px" }</li>
-</ul><h3>Mode 'simple'</h3>
+<li>simple - most simple. 
+<ul><li>simply consist of just key &amp; value.</li></ul>
+</li>
+<li>deep - more detailed then simple mode.
+<ul><li>this includes more informations of selector, terms, expression, queries, …</li></ul>
+</li>
+<li>atomic - most detailed. 'atomic' JSON has all pieces of each key &amp; values in CSS.
+<ul><li>e.g. length has numeric value &amp; its unit like "100px" -&gt; { "value": 100, "unit": "px" }</li></ul>
+</li>
+</ul><h3>Type 'simple'</h3>
 
 <pre><code>stylesheet_object =
 
     + charset [Object]
 
     + imports [Array]
-        + ImportRule [Object]
-            + type : "import" : []// URI or string
+        + [Object(Import)]
+            + type : "import" : [DOMString]// URI or string
             + mediaquries [DOMString] : // if query exist
 
     + namespaces [Array]
@@ -166,23 +172,25 @@ $ jison ./src/cssparser.y ./src/css.l
             + id [DOMString] : // identifier
             + prefix [DOMString] : // vendor prefix e.g. -moz-, -webkit-, -o-, …
             + keyframes [Array]
-                + offset [DOMString] : // offset string
-                + declarations [Object] : // declarations
+            	+ [Object(keyframe)]
+            		+ type [DOMString] : "keyframe"
+	                + offset [DOMString] : // offset string
+    	            + declarations [Object] : // declarations
 </code></pre>
 
-<h3>Mode 'deep'</h3>
+<h3>Type 'deep'</h3>
 
 <p>Not yet.</p>
 
-<h3>Mode 'atomic'</h3>
+<h3>Type 'atomic'</h3>
 
 <p>Not yet.</p>
 
 <h2>Example</h2>
 
-<p>following is tested result with some rulesets at <a href="http://css3please.com">http://css3please.com</a></p>
+<p>Example is tested with rulesets at <a href="http://css3please.com">http://css3please.com</a></p>
 
-<pre><code>node cssparser ./test/sample.css -console
+<pre><code>cssparser example/test.css --console -i 4
 </code></pre>
 
 <h3>Input</h3>
