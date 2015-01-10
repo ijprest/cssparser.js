@@ -1,6 +1,6 @@
-/** cssparser - v0.2.2 - 2013-09-11
+/** cssparser - v0.2.2 - 2015-01-10
  * http://cwdoh.github.io/cssparser.js/
- * Git Build: SHA1 : 07de9f9dd0067ec8a8fbb675a6b2f587ce634ad7
- * Copyright (c) 2013 Chang W. Doh; Licensed MIT, http://www.opensource.org/licenses/mit-license.php
+ * Git Build: SHA1 : 6d61b6af6cb69ef45dd8d7d32102c20698a8ec62
+ * Copyright (c) 2015 Chang W. Doh; Licensed MIT, http://www.opensource.org/licenses/mit-license.php
  **/
 

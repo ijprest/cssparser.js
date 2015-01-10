@@ -1,7 +1,7 @@
 cssparser.js
 ========
 
-cssparser.js is a parser that generates json matched with source css structure.
+cssparser.js is a parser that generates **JSON** matched with source css structure.
 
 ##Description
 * License: MIT license - [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
@@ -74,9 +74,10 @@ You can generate javascript object from your javascript module.
 
 There's three level of JSON structure for CSS.
 
-* simple - most simple. this's simply consist of just key & value.
-* deep - more detailed then simple mode. this has more informations of selector, terms, expression, queries, …
-* atomic - most detailed. 'atomic' JSON has all pieces of each key & values in CSS. e.g. length has numeric value & its unit like "100px" -> { "value": 100, "unit": "px" }
+* **simple** - most simple. this's simply consist of just key & value.
+* **deep** - more detailed then simple mode. this has more informations of selector, terms, expression, queries, …
+* **atomic** - most detailed. 'atomic' JSON has all pieces of each key & values in CSS.
+ * e.g. length has numeric value & its unit like "100px" -> { "value": 100, "unit": "px" }
 
 ###Mode 'simple'
 
